@@ -14,3 +14,6 @@
       authorized_key: user=ubuntu key="{{item}}"
       with_file:
         - ~/.ssh/id_rsa.pub
+
+    - name: Update apt cache and upgrade
+      raw: apt -y update && apt -y upgrade
